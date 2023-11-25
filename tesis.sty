@@ -1,0 +1,105 @@
+% Preámbulo de todos los paquetes utilizados para la tesis
+% Una Construcción Eficiente de Superficies Atómicas
+% Erick Jesús Avelar Sánchez
+
+\ProvidesPackage{tesis}
+
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage{lmodern, microtype}
+\usepackage[spanish, es-nodecimaldot, es-tabla, es-nolayout]{babel}
+\unaccentedoperators \unspacedoperators
+\usepackage{mathtools, amssymb, bm}
+\usepackage{pgfplots} 
+\pgfplotsset{compat=newest}
+\usepackage{lipsum}
+\usepackage{mathpazo}
+\usepackage{parskip}
+\usepackage[nottoc,numbib]{tocbibind}
+\usepackage{tikz}
+\usetikzlibrary{shapes.geometric, arrows}
+\tikzstyle{startstop} = [rectangle, rounded corners, minimum width=3cm, 
+												   minimum height=1cm,text centered, draw=black, fill=red!30]
+\tikzstyle{io} = [trapezium, trapezium left angle=70, trapezium right angle=110, 
+								   minimum width=3cm, minimum height=1cm, text centered, draw=black, fill=blue!30]
+\tikzstyle{process} = [rectangle, minimum width=3cm, minimum height=1cm, 
+                                            text centered, draw=black, fill=orange!30]
+\tikzstyle{decision} = [diamond, minimum width=3cm, minimum height=1cm, 
+												 text centered, draw=black, fill=green!30]
+\tikzstyle{arrow} = [thick,->,>=stealth]	
+\usepackage{array, booktabs, dcolumn, multirow}
+\usepackage{graphicx}
+\usepackage[margin=3cm]{geometry}
+\usepackage{chemformula}
+\usepackage{svg}
+\usepackage{caption}
+\usepackage{chemfig}
+ \usepackage{comment}
+\usepackage{titlesec}
+\titleformat{\chapter}[display]
+  {\normalfont\bfseries}{}{0pt}{\Huge}
+\usepackage{braket}
+\usepackage{subcaption}
+\usepackage[final]{showkeys}
+\usepackage{csquotes}
+\usepackage[backend=bibtex,sorting=none,safeinputenc, style=numeric-comp]{biblatex}
+\addbibresource{referencias.bib}
+%\usepackage[firstpageonly, color={[gray]{0.75}},
+%text=DRAFT]{draftwatermark}
+\usepackage{xcolor}
+\usepackage{hyperref}
+\usepackage{cleveref}
+\newcounter{equationset}
+\newcommand{\equationset}[1]{% \equationset{<caption>}
+  \refstepcounter{equationset}% Step counter
+  \noindent\makebox[\linewidth]{Conjunto de ecuaciones~\theequationset: #1}}% Print caption
+\pagestyle{plain}
+% Referencias en español
+\crefname{equation}{ec.}{ecs.}
+\crefname{table}{tab.}{tabs.}
+\crefname{figure}{fig.}{figs.}
+\crefname{section}{sec.}{secs.}
+\crefname{subsection}{subsec.}{subsecs.}
+\crefname{page}{pág.}{págs.}
+\Crefname{figure}{figura}{figuras}
+\Crefname{equation}{ecuación}{ecuaciones}
+\Crefname{table}{tabla}{tablas}
+\Crefname{section}{sección}{secciones}
+\Crefname{subsection}{subsección}{subsecciones}
+\Crefname{page}{página}{páginas}
+\Crefname{chapter}{capítulo}{capítulos}
+% Conjunción de las referencias en español
+\newcommand{\crefrangeconjunction}{--}
+\newcommand{\crefpairconjunction}{ y }
+\newcommand{\crefmiddleconjunction}{, }
+\newcommand{\creflastconjunction}{ y }
+\newcommand{\code}{\texttt}
+\newcommand{\codelarge}{\ttfamily}
+\newcommand{\enf}{\emph}
+\newsavebox\IBoxA \newsavebox\IBoxB \newlength\IHeight
+\newcommand\TwoFig[6]{% Image1 Caption1 Label1 Im2 Cap2 Lab2
+  \sbox\IBoxA{\includegraphics[width=0.45\textwidth]{#1}}
+  \sbox\IBoxB{\includegraphics[width=0.45\textwidth]{#4}}%
+  \ifdim\ht\IBoxA>\ht\IBoxB
+    \setlength\IHeight{\ht\IBoxB}%
+  \else\setlength\IHeight{\ht\IBoxA}\fi
+  \begin{figure}[!htb]
+  \minipage[t]{0.45\textwidth}\centering
+  \captionsetup{justification=centering,margin=0.3cm}
+  \includegraphics[height=\IHeight]{#1}
+  \caption{#2}\label{#3}
+  \endminipage\hfill
+  \minipage[t]{0.45\textwidth}\centering
+  \captionsetup{justification=centering,margin=0.3cm}
+  \includegraphics[height=\IHeight]{#4}
+  \caption{#5}\label{#6}
+  \endminipage 
+  \end{figure}%
+}
+\renewcommand{\vec}[1]{%
+  \if#1\relax\bm{#1}\else\mathbf{#1}\fi
+}
+\newcommand{\lp}{\left(}
+\newcommand{\rp}{\right)}
+\newcommand{\df}{\mathrm}
+\renewcommand{\contentsname}{}

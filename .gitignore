@@ -40,6 +40,9 @@
 *.synctex.gz(busy)
 *.pdfsync
 
+#Build directory
+build/
+
 ## Build tool directories for auxiliary files
 # latexrun
 latex.out/
